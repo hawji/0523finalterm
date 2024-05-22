@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- fullPage.js CSS -->
+    <link rel="stylesheet" href="path/to/fullpage.css">
+
+    <!-- jQuery (fullPage.js가 jQuery에 의존하는 경우) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- fullPage.js JavaScript -->
+    <script src="fullPage.js-2.9.7/jquery.fullPage.js"></script>
+
+    <script>
+      $(document).ready(function() {
+          var imagePosition = 2; // 이미지 초기 위치 (%)
+
+          $('#fullpage').fullpage({
+              autoScrolling:true,
+              scrollHorizontally: true,
+              onLeave: function(origin, destination, direction){
+                  // 섹션 이동 시 실행되는 함수
+                  if(direction == 'down'){
+                      imagePosition += 13; // 섹션이 아래로 이동할 때 이미지를 오른쪽으로 12.8% 이동
+                  } else if(direction == 'up') {
+                      imagePosition -= 13; // 섹션이 위로 이동할 때 이미지를 왼쪽으로 12.8% 이동
+                  }
+                  $('.rotate-image').css('left', imagePosition + '%');
+              }
+          });
+
+       
+      });
+    </script>
+
+       <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        opacity: 0; /* 초기 상태에서 투명하게 설정 */
+        animation: fade-in 1s forwards; /* 1초 동안 페이드 인 애니메이션 */
+    }
+
+    @keyframes fade-in {
+        to {
+            opacity: 1;
+        }
+    }
+
+    #header {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        position: fixed; /* #header의 위치를 고정 */
+        top: 0; /* 페이지의 맨 위에 위치하도록 설정 */
+        left: 0; /* 페이지의 왼쪽 가장자리에 위치하도록 설정 */
+        width: 100%; /* 너비를 뷰포트의 전체 너비로 설정 */
+        padding-top: 30px;
+    }
+
+    .rotate-image { 
+        position: absolute;
+        top: -5; 
+        left: 2%; 
+        z-index: 20; /* rotate-image의 z-index를 더 높게 설정 */
+        animation: rotate-animation 2s infinite linear;
+        transition: left 0.5s ease-in-out;
+    }
+
+    #header img:last-child {
+        z-index: 10; /* Vector 2.png의 z-index를 더 낮게 설정 */
+    }
+
+    @keyframes rotate-animation {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* 모든 섹션이 100vh 높이를 가지도록 설정 */
+    .section {
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .zoom-image-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .zoom-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        animation: zoom-in-out 1.5s ease-in-out forwards; /* 애니메이션 시간 1.5초로 변경 */
+    }
+
+    .dark {
+        filter: brightness(0.5); /* 어두워짐 효과 */
+        transition: filter 1.5s ease-in-out; /* 부드러운 전환을 위해 추가 */
+    }
+
+    .container{height: 412px;}
+
+    @keyframes zoom-in-out {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.2);
+        }
+    }
+
+    .background {background-color: black; 
+      display: flex; 
+      justify-content: center;
+      align-items: center;}
+    
+    .whitet {
+        color: white;
+        position: relative; /* p 태그에 대한 상대 위치 설정 */
+    }
+
+    
+    .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 946px;
+}
+
+.left, .right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 왼쪽 컨테이너 내용을 왼쪽 정렬 */
+}
+
+.right {
+    align-items: flex-end; /* 오른쪽 컨테이너 내용을 오른쪽 정렬 */
+}
+
+.blackback{background-color: black;}
+
+
+
+
+</style>
+
+</head>
+<body>
+  <div id="header">
+    <img src="image/Group 13.png" class="rotate-image">
+    <img src="image/Vector 2.png">
+  </div>
+  
+  <div id="fullpage">
+
+    <div class="section background">
+      <div class="container resizec">
+        <div class="left">
+            <p class="whitet">AMY</p>
+            <p class="whitet">WINEHOUSE</p>
+            <img src="image/GROUP14.png" alt="Group 14">
+            <p class="whitet">REMEMBERING HER</p>
+        </div>
+        <div class="right">
+            <img src="image/image 16.png" alt="Image 16">
+        </div>
+    </div>
+    
+    </div>
+
+    <div class="section">
+      <img src="image/22sec.png">
+    </div>
+    <div class="section">
+      <img src="image/3sec.png">
+    </div>
+    <div class="section"> <img src="image/4sec.png"></div>
+    <div class="section"> <img src="image/5sec.png"></div>
+    <div class="section"> <img src="image/6sec.png"></div>
+    <div class="section blackback"> black background</div>
+    <div class="section"> <img src="image/7sec.png"></div>
+  </div>
+</body>
+</html>
