@@ -131,12 +131,10 @@
       display: flex; 
       justify-content: center;
       align-items: center;
-    padding-top: 60px;}
+    padding-top: 30px;}
     
     .whitet {
         color: white;
-        position: relative; /* p 태그에 대한 상대 위치 설정 */
-        display: block;
         font-family: Pretendard-Bold;
         font-size: 0.8rem;
     }
@@ -168,7 +166,7 @@
   height: auto; /* 이미지 비율 유지 */
   display: block; /* 이미지를 블록 요소로 설정 */
   animation: rotate 20s linear infinite; /* 20초 동안 회전, 무한 반복 */
-  z-index: ;
+  z-index: -100 ;
 }
 
 
@@ -181,7 +179,15 @@
   left: 50%; /* 왼쪽에서 50% 위치에 배치 */
 }
 
-.centeralign{text-align: center;}
+
+
+.bottompa{position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 30;}
+
+.centeralign{text-align: center;
+position: relative;
+bottom: 65px;}
+
+
 
 
 </style>
