@@ -7,6 +7,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Freeman&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -19,177 +21,47 @@
     <script src="fullPage.js-2.9.7/jquery.fullPage.js"></script>
 
     <script>
+      $(window).on('load', function() {
+        // 페이지가 완전히 로드된 후에 실행될 코드
+        $('#header').css('transform', 'translateY(-120%)');
+      });
+    
       $(document).ready(function() {
-          var imagePosition = 0; // 이미지 초기 위치 (%)
-        
-
-          $('#fullpage').fullpage({
-              autoScrolling:true,
-              scrollHorizontally: true,
-              onLeave: function(origin, destination, direction){
-                  // 섹션 이동 시 실행되는 함수
-                  if(direction == 'down'){
-                      imagePosition += 13.7; // 섹션이 아래로 이동할 때 이미지를 오른쪽으로 12.8% 이동
-                  } else if(direction == 'up') {
-                      imagePosition -= 13.7; // 섹션이 위로 이동할 때 이미지를 왼쪽으로 12.8% 이동
-                  }
-                  $('.rotate-image').css('left', imagePosition + '%');
-              }
-          });
-
+        var imagePosition = 0; // 이미지 초기 위치 (%)
+    
+        $('#fullpage').fullpage({
+          autoScrolling: true,
+          scrollHorizontally: true,
+          onLeave: function(origin, destination, direction) {
+            // 섹션 이동 시 실행되는 함수
+            if (direction == 'down' || direction == 'up') {
+              // 헤더를 잠깐 보여줌
+              $('#header').css('transform', 'translateY(0)');
+    
+              setTimeout(function() {
+                // 잠깐 후 다시 숨김
+                $('#header').css('transform', 'translateY(-120%)');
+              }, 1200); // 1초 후에 헤더를 숨김
+            }
+    
+            if (direction == 'down') {
+              imagePosition += 13.7; // 섹션이 아래로 이동할 때 이미지를 오른쪽으로 13.7% 이동
+            } else if (direction == 'up') {
+              imagePosition -= 13.7; // 섹션이 위로 이동할 때 이미지를 왼쪽으로 13.7% 이동
+            }
+            $('.rotate-image').css('left', imagePosition + '%');
+    
        
+          }
+        });
       });
     </script>
+    
 
 
 
        <style>
-          @font-face {
-    font-family: 'Pretendard-Light';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Pretendard-Medium';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Pretendard-Bold';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-}
-
-    html, body {
-        margin: 0;
-        padding: 0;
-        opacity: 0; /* 초기 상태에서 투명하게 설정 */
-        animation: fade-in 1s forwards; /* 1초 동안 페이드 인 애니메이션 */
-    }
-
-    @keyframes fade-in {
-        to {
-            opacity: 1;
-        }
-    }
-
-    #header {
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1000;
-        position: fixed; /* #header의 위치를 고정 */
-        top: 0; /* 페이지의 맨 위에 위치하도록 설정 */
-        left: 35%; /* 페이지의 왼쪽 가장자리에 위치하도록 설정 */
-        right: 35%;
-        padding-top: 30px;
-        
-    }
-
-    .rotate-image { 
-        position: absolute;
-        top: -5; 
-        left: 0; 
-        z-index: 20; /* rotate-image의 z-index를 더 높게 설정 */
-        animation: rotate-animation 2s infinite linear;
-        transition: left 0.5s ease-in-out;
-    }
-
-    #header img:last-child {
-        z-index: 10; /* Vector 2.png의 z-index를 더 낮게 설정 */
-    }
-
-    @keyframes rotate-animation {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-
-    /* 모든 섹션이 100vh 높이를 가지도록 설정 */
-    .section {
-        height: 100vh;
-        overflow: hidden;
-    }
-
-   
-
-    .background {background-color: black; 
-      display: flex; 
-      justify-content: center;
-      align-items: center;
-    padding-top: 30px;}
-    
-    .whitet {
-        color: white;
-        font-family: Pretendard-Bold;
-        font-size: 0.8rem;
-    }
-
-   
-.resizing {width: 100%;}
-
-.blackback{background-color: black;}
-
-.section.background {
-  position: relative; /* 이를 통해 자식 요소들이 이 div에 대해 절대 위치를 가질 수 있게 함 */
-  display: flex; /* Flexbox를 사용하여 자식 요소들을 정렬 */
-  justify-content: center; /* 가로 축에서 중앙 정렬 */
-  align-items: center; /* 세로 축에서 중앙 정렬 */
-  height: auto; /* 배경 이미지의 높이에 맞추어 자동 조정 */
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.background-image {
-  width: 100%; /* 배경 이미지가 div를 꽉 채우게 설정 */
-  height: auto; /* 이미지 비율 유지 */
-  display: block; /* 이미지를 블록 요소로 설정 */
-  animation: rotate 20s linear infinite; /* 20초 동안 회전, 무한 반복 */
-  z-index: -100 ;
-}
-
-
-.overlay-image {
-  position: absolute; /* 절대 위치를 사용하여 배경 이미지 위에 겹치도록 설정 */
-  max-width: 35%; /* 겹치는 이미지의 크기를 조정, 필요에 따라 값 변경 */
-  max-height: 35%; /* 겹치는 이미지의 크기를 조정, 필요에 따라 값 변경 */
-  transform: translate(-50%, -50%); /* 중앙 정렬을 보정 */
-  top: 50%; /* 상단에서 50% 위치에 배치 */
-  left: 50%; /* 왼쪽에서 50% 위치에 배치 */
-}
-
-
-
-.bottompa{position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 30;}
-
-.centeralign{text-align: center;
-position: relative;
-bottom: 65px;}
-
-
-
-
+         
 </style>
 
 </head>
@@ -203,24 +75,60 @@ bottom: 65px;}
   <div id="fullpage">
 
     <div class="section background">
+
+      <div id="spacing1">
       <img src="image/remember.png" class="background-image">
       <img src="image/image 16.png" class="overlay-image">
-      <p class="whitet centeralign bottomepa">AMY WINEHOUSE.1983-2011 - 멀리 떠난 그녀를 추억하며</p>
     </div>
+      <p class="whitet centeralign ">AMY WINEHOUSE.1983-2011 - 멀리 떠난 그녀를 추억하며</p>
     
+    </div>  
       
+<!-- 이건 첫번째 페이지입니당. -->
+    <div class="section a1">
 
-    <div class="section">
-      <img src="image/22sec.png">
+      <div class="contentconatiner">
+
+<div class="textre">
+  <div class="texting">
+    에이미는 9살 때 부모의 이혼으로 우울하고 반항적인 소녀가 되었습니다. 그러나 재즈 가수였던 할머니 덕분에 음악적 재능을 발견하고 예술학교에 진학했습니다. 학교에서 독특한 개성과 뛰어난 가창력으로 주목받았지만, 문제 행동들을 일삼다 결국 학교로부터 퇴학을 통보받았습니다.
+  </div>
+</div>
+
+  <div class=" imagecontainer">
+     <img src="image/tape (1).png" class="simg1">
+     <img src="image/Group 19.png"class="simg2">
+     <img src="image/double tape.png" class="simg3">
+     
+     <img src="image/finger.png" class="simg4 moving-image">
     </div>
+
+    </div>
+
+ </div>
+
     <div class="section">
       <img src="image/3sec.png">
     </div>
-    <div class="section"> <img src="image/4sec.png"></div>
-    <div class="section"> <img src="image/5sec.png"></div>
-    <div class="section"> <img src="image/6sec.png"></div>
-    <div class="section blackback"> black background</div>
-    <div class="section"> <img src="image/7sec.png"></div>
+
+    <div class="section"> <img src="image/4sec.png">
+    </div>
+
+    <div class="section"> <img src="image/5sec.png">
+    </div>
+
+    <div class="section"> <img src="image/6sec.png">
+    </div>
+
+    <div class="section blackback"> black background
+
+    </div>
+
+    <div class="section"> <img src="image/7sec.png">
+    </div>
+
   </div>
+
 </body>
+
 </html>
