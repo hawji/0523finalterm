@@ -41,13 +41,13 @@
               setTimeout(function() {
                 // 잠깐 후 다시 숨김
                 $('#header').css('transform', 'translateY(-120%)');
-              }, 1200); // 1초 후에 헤더를 숨김
+              }, 1000); // 1초 후에 헤더를 숨김
             }
     
             if (direction == 'down') {
-              imagePosition += 13.7; // 섹션이 아래로 이동할 때 이미지를 오른쪽으로 13.7% 이동
+              imagePosition += 19.1; // 섹션이 아래로 이동할 때 이미지를 오른쪽으로 13.7% 이동
             } else if (direction == 'up') {
-              imagePosition -= 13.7; // 섹션이 위로 이동할 때 이미지를 왼쪽으로 13.7% 이동
+              imagePosition -= 19.1; // 섹션이 위로 이동할 때 이미지를 왼쪽으로 13.7% 이동
             }
             $('.rotate-image').css('left', imagePosition + '%');
     
@@ -57,77 +57,264 @@
       });
     </script>
     
+    <script>document.addEventListener('DOMContentLoaded', (event) => {
+    const audio = document.getElementById('background-music');
+    audio.play().catch(error => {
+        // 자동 재생이 차단되면 사용자 상호작용을 유도
+        console.log('Autoplay was prevented. Click to play the audio.');
+        document.body.addEventListener('click', () => {
+            audio.play();
+        }, {once: true});
+    });
+});
+</script>
 
 
+    <script></script>
 
-       <style>
-         
-</style>
-
+    
 </head>
 <body>
+ 
+    <audio id="background-music" src="song.mp3" loop></audio>
+    <script src="script.js"></script>
+  
+  
 
   <div id="header">
     <img src="image/Group 13.png" class="rotate-image">
     <img src="image/Vector 2.png" class="resizing">
   </div>
   
+  
+  
+  
   <div id="fullpage">
+    
+      <script>document.addEventListener('DOMContentLoaded', function() {
+  var followCursorImg = document.getElementById('followCursor');
 
-    <div class="section background">
+  document.getElementById('cursol1').addEventListener('mousemove', function(e) {
+    var x = e.clientX;
+    var y = e.clientY;
+    followCursorImg.style.display = 'block';
+    followCursorImg.style.left = x + 10 + 'px'; // 마우스 커서에서 약간 오른쪽
+    followCursorImg.style.top = y + 10 + 'px'; // 마우스 커서에서 약간 아래쪽
+  });
+
+  // 마우스가 div를 벗어날 때 이미지를 숨깁니다.
+  document.getElementById('cursol1').addEventListener('mouseleave', function() {
+    followCursorImg.style.display = 'none';
+  });
+});
+</script>
+
+    <div class="section background" id="cursol1">
+      <img src="image/cursol%201.png" id="followCursor" style="position: absolute; display: none;">
 
       <div id="spacing1">
       <img src="image/remember.png" class="background-image">
       <img src="image/image 16.png" class="overlay-image">
     </div>
-      <p class="whitet centeralign ">AMY WINEHOUSE.1983-2011 - 멀리 떠난 그녀를 추억하며</p>
+      <div class="scroll-down">
+  <div class="scroll-icon">
+    <div class="oval"></div>
+  </div>
+  <span class="efwefwe">SCROLL DOWN</span>
+</div>
     
     </div>  
       
 <!-- 이건 첫번째 페이지입니당. -->
     <div class="section a1">
 
-      <div class="contentconatiner">
-
-<div class="textre">
-  <div class="texting">
-    에이미는 9살 때 부모의 이혼으로 우울하고 반항적인 소녀가 되었습니다. 그러나 재즈 가수였던 할머니 덕분에 음악적 재능을 발견하고 예술학교에 진학했습니다. 학교에서 독특한 개성과 뛰어난 가창력으로 주목받았지만, 문제 행동들을 일삼다 결국 학교로부터 퇴학을 통보받았습니다.
-  </div>
-</div>
-
-  <div class=" imagecontainer">
-     <img src="image/tape (1).png" class="simg1">
-     <img src="image/Group 19.png"class="simg2">
-     <img src="image/double tape.png" class="simg3">
-     
-     <img src="image/finger.png" class="simg4 moving-image">
-    </div>
-
-    </div>
+   
+   <div class="firstbox">
+    <div class=option>
+       
+        <div>
+            <img src="image/Vector.png">
+        </div>
+        
+        <div class="dfsdfsdfds">
+        <div class="whiteletter">
+        <p class="title">화려한
+데뷔
+프랭크
+불행의 시작</p>
+       </div>
+       <div>
+        <p class="textxx">에이미는 부모의 이혼으로 우울하고 반항적인 소녀가 되었습니다.
+그러나 재즈 가수였던 할머니 덕분에 음악적 재능을 발견하고 예술학교에
+진학했습니다.독특한 개성과 뛰어난 가창력으로 주목받았지만
+문제 행동을 일삼다 결국 퇴학당합니다.
+       </div>
+        </div>
+        
+        </div>
+        
+        
+        <div>
+            <img src="image/Group%2038.png" class="lo1 moving-image">
+            <img src=image/second%20pic.png class="lo2">
+        </div>
+        </div>
 
  </div>
 
-    <div class="section">
-      <img src="image/3sec.png">
+   
+   
+<!--여긴두번째입니다->-->
+   
+   
+    <div class="section blackon">
+     <div class="secondbox">
+         <div class="option2">
+             <div>
+             <img src=image/Group%2040.png>
+             
+             </div>
+             <div class="whiteletter efewfwef">
+             <div>
+             <p class="title">화려한 데뷔와 불행의 시작</p>
+             </div>
+             <div>
+             <p class="textxx">19세의 나이에 에이미는 프로듀서와 계약하며 가수로
+데뷔했습니다. 하지만 대중과 언론의 관심이 쏠리자 불편함을
+느꼈습니다.그래도 첫 앨범 '프랭크'에서 재즈와 힙합 장르를
+넘나드는 독창성으로 호평받으며 이름을 알렸습니다.</p>
+            </div>
+             </div>
+         </div>
+         
+         
+         
+         <div class="ali">
+         <img src=image/Group%2031.png>
+         <img src=image/Group%2032.png class="photo">
+         </div>
+     </div>
     </div>
+    
+<!--    여긴세번째야->-->
 
-    <div class="section"> <img src="image/4sec.png">
+    <div class="section blackon">
+    
+    
+    <div class="thirdbox">
+       
+       <div class="dfdfdsf">
+        <div>
+            <img src=image/Group%2041.png>
+        </div>
+          
+            
+        <div class="whiteletter widthsizing">
+         <div>
+          <p class="title">블레이크
+블레이크 
+이별끝에
+백투블랙</p>
+           </div>
+           <div>
+            <p class="textxx">남자친구인 블레이크와 이별하게 된 에이미. 그러나 오히려 이를 음악으로 승화시키겠다는 마음을 먹고 끝내 ‘Back to Black’을 발매합니다.
+            앨범은 성공했으나 전보다 심해진 사생활 침해로 인해 더욱 큰 고통에 빠지게 됩니다.</p>
+            </div>
+        
     </div>
-
-    <div class="section"> <img src="image/5sec.png">
     </div>
-
-    <div class="section"> <img src="image/6sec.png">
-    </div>
-
-    <div class="section blackback"> black background
-
-    </div>
-
-    <div class="section"> <img src="image/7sec.png">
-    </div>
-
+    
+    
+    <div class="image-container">
+  <div class="image-flip">
+    <img class="front" src="image/a23.png" alt="Front Image">
+    <img class="back" src="image/a24.png" alt="Back Image">
   </div>
+</div>
+    
+    
+    </div>
+      </div>
+    
+    
+    
+    
+    
+    
+<!--    여기가 그다음-->
+    
+
+    <div class="section blackon">
+    
+    
+    <div class="rererer">
+    <div class="sizzzz">
+    <div>
+    <img src=image/Group%2042.png>
+    </div>
+    
+    <div class="whiteletter sdfsdf">
+       <div>
+        <p class="title">점점 심해지는 압박감과 중독</p>
+        </div>
+        <div>
+        <p class="textxx">에이미가 유명해질수록 대중과 언론은 에이미의 사생활에 대해 강도
+높은 비난을 이어갑니다.이를 이겨내기 위해 잠시 런던을
+떠나 요양을 하기도 하지만, 기자들과 파파라치는 끈질기게 에이미를
+쫓아다닙니다. 이런 압박속에서 에이미의 중독 증세는 날로 심해졌습니다.</p>
+    </div>
+    </div>
+    </div>
+    
+    <div class="dfsdfdsfd">
+        <img src="image/sylin.png" class="glitch gli2">
+    </div>
+    </div>
+    
+    </div>
+    
+    
+    
+    
+    
+    
+<!--    여긴다섯번째-->
+
+
+ <div class="section container blackon">
+  <input type="text" id="input-text" placeholder="Type something...">
+  <div id="background"></div>
+</div>
+  <!-- 다른 섹션들 추가 가능 -->
+
+
+    <script>const inputText = document.getElementById('input-text');
+const background = document.getElementById('background');
+
+inputText.addEventListener('input', function() {
+  const text = this.value;
+  updateBackground(text);
+});
+
+inputText.addEventListener('keyup', function(event) {
+  if (event.key === 'Enter') {
+    const letters = background.querySelectorAll('.letter');
+    letters.forEach(letter => letter.classList.add('fade-out'));
+    this.value = '';
+  }
+});
+
+function updateBackground(text) {
+  background.innerHTML = '';
+  for (let i = 0; i < text.length; i++) {
+    const letter = document.createElement('span');
+    letter.textContent = text[i];
+    letter.classList.add('letter');
+    letter.style.left = `${Math.random() * window.innerWidth}px`;
+    letter.style.top = `${Math.random() * window.innerHeight}px`;
+    background.appendChild(letter);
+  }
+}</script>
 
 </body>
 
