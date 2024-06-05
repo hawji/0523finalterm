@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-
+<script src="script.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Freeman&display=swap" rel="stylesheet">
@@ -45,9 +45,9 @@
             }
     
             if (direction == 'down') {
-              imagePosition += 19.1; // 섹션이 아래로 이동할 때 이미지를 오른쪽으로 13.7% 이동
+              imagePosition += 16; // 섹션이 아래로 이동할 때 이미지를 오른쪽으로 13.7% 이동
             } else if (direction == 'up') {
-              imagePosition -= 19.1; // 섹션이 위로 이동할 때 이미지를 왼쪽으로 13.7% 이동
+              imagePosition -= 16; // 섹션이 위로 이동할 때 이미지를 왼쪽으로 13.7% 이동
             }
             $('.rotate-image').css('left', imagePosition + '%');
     
@@ -90,27 +90,20 @@
   
   
   <div id="fullpage">
+   
+
     
-      <script>document.addEventListener('DOMContentLoaded', function() {
-  var followCursorImg = document.getElementById('followCursor');
 
-  document.getElementById('cursol1').addEventListener('mousemove', function(e) {
-    var x = e.clientX;
-    var y = e.clientY;
-    followCursorImg.style.display = 'block';
-    followCursorImg.style.left = x + 10 + 'px'; // 마우스 커서에서 약간 오른쪽
-    followCursorImg.style.top = y + 10 + 'px'; // 마우스 커서에서 약간 아래쪽
-  });
-
-  // 마우스가 div를 벗어날 때 이미지를 숨깁니다.
-  document.getElementById('cursol1').addEventListener('mouseleave', function() {
-    followCursorImg.style.display = 'none';
-  });
-});
-</script>
+     
+  
+      
+ 
+    
+      
+    
 
     <div class="section background" id="cursol1">
-      <img src="image/cursol%201.png" id="followCursor" style="position: absolute; display: none;">
+      <img src="image/cursol%201.png" id="followCursor" style="position: absolute; display: none;z-index: 99999">
 
       <div id="spacing1">
       <img src="image/remember.png" class="background-image">
@@ -125,8 +118,10 @@
     
     </div>  
       
+      
 <!-- 이건 첫번째 페이지입니당. -->
     <div class="section a1">
+    <img id="cursorImg" src="image/200w.gif" style="display: none; position: absolute;z-index: 99999">
 
    
    <div class="firstbox">
@@ -138,10 +133,9 @@
         
         <div class="dfsdfsdfds">
         <div class="whiteletter">
-        <p class="title">화려한
-데뷔
-프랭크
-불행의 시작</p>
+        <p class="title">이혼과
+        진학과
+        퇴학</p>
        </div>
        <div>
         <p class="textxx">에이미는 부모의 이혼으로 우울하고 반항적인 소녀가 되었습니다.
@@ -167,7 +161,11 @@
 <!--여긴두번째입니다->-->
    
    
-    <div class="section blackon">
+    <div class="section b1">
+
+<img id="cdfsdfsdf" src="image/cursor222.gif" style="display: none; position: absolute;z-index: 99999">
+
+
      <div class="secondbox">
          <div class="option2">
              <div>
@@ -198,8 +196,8 @@
     
 <!--    여긴세번째야->-->
 
-    <div class="section blackon">
-    
+    <div class="section blackon f">
+     <img id="fefwefwefwef" src="image/cursol333.gif" style="display: none; position: absolute;z-index: 99999;">
     
     <div class="thirdbox">
        
@@ -244,8 +242,8 @@
 <!--    여기가 그다음-->
     
 
-    <div class="section blackon">
-    
+    <div class="section blackon h">
+    <img id="dfefefdfdf" src="image/cursor4444.gif" style="display: none; position: absolute;z-index: 99999;">
     
     <div class="rererer">
     <div class="sizzzz">
@@ -274,15 +272,33 @@
     </div>
     
     
+    <div class="section blackon asd">
+     
+     <img id="ececezz" src="image/cursol5555.png" style="display: none; position: absolute;z-index: 99999;">
+      <div class="fefwef">
+      <div>
+       <img src="image/bigthing.png">
+       </div>
+       
+       <div>
+        <p class="title">먼 곳으로 떠나다</p>
+        <p class="textxx">결국 에이미는 급성 알코올 중독으로 2011년 세상을 떠납니다. 
+뛰어난 재능과 반항적인 행보, 그러나 그녀는 모든 순간 그저
+노래하고 사랑받기를 원하는 사람일 뿐이였습니다. 먼 곳으로
+떠난 그녀, 우리에겐 이제 그녀가 남긴 몇 곡의 노래만이 
+남았습니다.</p>
+  </div>
+   </div>
+    </div>
     
     
     
-    
-<!--    여긴다섯번째-->
+
 
 
  <div class="section container blackon">
-  <input type="text" id="input-text" placeholder="Type something...">
+  <input type="text" id="input-text" placeholder="To Her">
+  
   <div id="background"></div>
 </div>
   <!-- 다른 섹션들 추가 가능 -->

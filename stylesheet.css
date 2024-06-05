@@ -326,7 +326,7 @@ bottom: 65px;}
 }
 
 .widthsizing {display: flex;justify-content: space-between;width: 350px;height: 100vh;flex-direction: row;padding-top:108px; 
-    
+     
 }
 
 .blackon {
@@ -338,6 +338,7 @@ bottom: 65px;}
 }
 
 .sizzzz {height: 100vh;display: flex;flex-direction: column;width: 400px;
+    
     
 }
 
@@ -358,7 +359,8 @@ bottom: 65px;}
 }
 
 .title {
-    font-family: Pretendard-Bold;font-size: 24px;margin-right: 26px
+    font-family: Pretendard-Bold;font-size: 24px;margin-right: 26px;color: white;
+    line-height: 34px;
 }
 
 .textxx {
@@ -478,6 +480,7 @@ bottom: 65px;}
 }
 
 .sdfsdf {display: flex;justify-content: space-between;width: 350px;height: 100vh;padding-left: 32px;flex-direction: row;
+   
 }
 
 .glitch {
@@ -530,6 +533,7 @@ bottom: 65px;}
 }
 
 .efewfwef {display: flex;justify-content: space-between;width: 350px;height: 100vh;flex-direction: row;padding-top:324px;
+  
     
 }
 
@@ -614,7 +618,63 @@ color:white
 }
 
 
-
-#cursol1 {cursor: none;
+.fefwef {    display: flex;
+    flex-direction: column;
+    width: 300px;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    row-gap: 230px;
+    padding-top: 50px
     
+}
+
+
+
+
+
+
+
+
+
+#cursol1 {cursor: none;}
+
+
+
+
+.asd {
+    position: relative;cursor: none;
+}
+
+
+.a1 {
+  position: relative;
+    cursor: none;
+}
+    
+
+.h {position: relative; cursor: none;
+    
+}
+
+
+.f {position: relative;
+    
+}
+
+/* styles.css */
+
+.b1{background-color: black;position: relative;
+    cursor: none;}
+
+
+}
+
+
+
+
+
+.asd {
+    position: relative;cursor: none;
 }
