@@ -45,9 +45,9 @@
             }
     
             if (direction == 'down') {
-              imagePosition += 16; // 섹션이 아래로 이동할 때 이미지를 오른쪽으로 13.7% 이동
+              imagePosition += 13.7; // 섹션이 아래로 이동할 때 이미지를 오른쪽으로 13.7% 이동
             } else if (direction == 'up') {
-              imagePosition -= 16; // 섹션이 위로 이동할 때 이미지를 왼쪽으로 13.7% 이동
+              imagePosition -= 13.7; // 섹션이 위로 이동할 때 이미지를 왼쪽으로 13.7% 이동
             }
             $('.rotate-image').css('left', imagePosition + '%');
     
@@ -234,8 +234,11 @@
     </div>
       </div>
     
+  <div class="section backgorund" id="bb">
+        <!-- Your content here -->
     
-    
+    <img src="image/Group%2048.png" class="hidden-image" id="hiddenImage">
+    </div>
     
     
     

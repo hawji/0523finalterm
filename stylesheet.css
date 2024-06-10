@@ -678,3 +678,44 @@ color:white
 .asd {
     position: relative;cursor: none;
 }
+
+.hidden-image {
+    position: absolute;
+    width: 50px; /* Adjust as necessary */
+    height: 50px; /* Adjust as necessary */
+    display: none;
+    pointer-events: none; /* Makes sure the cursor follows the mouse */
+   
+}
+
+
+
+.backgorund {
+    position: relative;
+    background-image: url('image/19.png');
+    background-size: cover; /* Ensure the background image covers the entire section */
+    cursor: none;
+    filter: saturate(0%);
+  
+}
+
+
+.no-cursor {
+    cursor: none;
+}
+
+
+
+
+@keyframes rotateStamp {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); /* 초기 회전 각도 */
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); /* 최종 회전 각도 */
+    }
+}
+
+.stamp-image {
+    animation: rotateStamp 8s linear infinite; /* 회전 애니메이션 적용 */
+}
